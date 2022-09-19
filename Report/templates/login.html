@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Login
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card align-items-center">
+        <form method="post">
+            <div class="card-body text-center">
+                <h5 class="card-title">City of Boulder</h5>
+                <h7 class="card-subtitle">Fitness Report Login</h7>
+                <br>
+                <br>
+                {% csrf_token %}
+                <div class=" input-group">
+                    <span class="input-group-text" id="basic-addon1">
+                        <span class="fas fa-user-circle"></span>
+                    </span>
+                    {{ form.ID }}
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-text">
+                        Password
+                    </span>
+                    {{form.password}}
+                </div>
+
+            </div>
+            <div class="text-center">
+                <input class='btn btn-primary' type="submit" value="Submit">
+            </div>
+            <br>
+        </form>
+        <p style="color:red">{{msg}}</p>
+    </div>
+
+</div>
+
+{% endblock content %}

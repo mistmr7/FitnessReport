@@ -1,0 +1,25 @@
+{% extends 'Report/templates/base.html' %}
+
+
+{% block title %}
+Fitness Report Analyzer
+{% endblock title %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="card align-items-center">
+            <h5 class="card-title">Welcome {{user}}</h5>
+            <h7 class="card-body text-center">
+                Press Start to analyze a fitness report
+            </h7>
+            <div class="text-center">
+                <input type="submit" class="btn btn-primary" value="Start">
+            </div>
+            <p style="color:red;"><strong>{{msg}}</strong></p>
+        </div>
+
+    </div>
+</form>
+{% endblock content %}
